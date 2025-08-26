@@ -1,0 +1,60 @@
+Build a full production-ready website for "PowerTap" (powertap.co). PowerTap showcases tutorials, playbooks, and resources for Microsoft Power Platform, Dynamics 365, Microsoft 365, and Copilot.
+
+Technical Requirements:
+- Use React + TailwindCSS for frontend.
+- Use React Router for navigation.
+- Use Framer Motion for smooth animations (hero transitions, card hover effects, page transitions).
+- Mobile-first, responsive, minimal, and modern design.
+
+Site Pages & Sections:
+
+1. Global
+- Navigation bar with logo (PowerTap), links: Home, Solutions, Playbooks, Blog, Resources, Contact.
+- Footer with social icons (LinkedIn, GitHub, Twitter), newsletter signup, copyright.
+
+2. Homepage
+- Hero section: headline ("Supercharge your productivity with Power Platform"), subtext ("Guides, playbooks, and integrations for Copilot, Dynamics 365, and Microsoft 365"), CTA button ("Explore Solutions").
+- Three feature cards: Solutions, Playbooks, Community.
+- "Integrations Made Simple" section: show logos of Power Platform, Copilot, Dynamics 365, Microsoft 365.
+- Call-to-action banner: "Get Started Today".
+
+3. Solutions Page
+- Header: "Solutions for Every Scenario".
+- Grid with solution cards:
+   - Power Platform Standalone
+   - Power Platform + Dynamics 365
+   - Power Platform + Microsoft 365
+   - Power Platform + Copilot
+- Each card has title, description, and link.
+
+4. Playbooks Page
+- Header: "Automation Playbooks".
+- Search bar + filter controls.
+- Grid of playbook cards:
+   - Automate Payroll
+   - Build a Library System
+   - ERP Integrations
+- Each card has title, tags, short summary, and "Read More".
+
+5. Blog Page
+- Header: "Insights & Updates".
+- Blog list with featured image, title, date, excerpt.
+- Sidebar with categories (Power Platform, Dynamics 365, Copilot, Microsoft 365).
+- Pagination at bottom.
+
+6. Resources Page
+- Header: "Resources".
+- Section with links to guides, GitHub repos, downloadable content.
+- Card grid layout.
+
+7. Contact Page
+- Header: "Get in Touch".
+- Contact form (Name, Email, Message).
+- Sidebar with: email (info@powertap.co), LinkedIn, GitHub, Twitter.
+- Embed a simple map.
+
+Design Notes:
+- Clean, professional, futuristic aesthetic.
+- Rounded cards, soft shadows, lots of white space.
+- Smooth hover animations.
+- Typography hierarchy (xl for headers, base for body).
