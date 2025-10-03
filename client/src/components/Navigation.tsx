@@ -14,6 +14,7 @@ export default function Navigation() {
     { href: "/playbooks", label: "Playbooks" },
     { href: "/blog", label: "Blog" },
     { href: "/resources", label: "Resources" },
+    { href: "/team", label: "Meet The Team" },
     { href: "/contact", label: "Contact" },
   ];
 

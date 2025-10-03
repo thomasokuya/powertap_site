@@ -9,6 +9,7 @@ import Solutions from "./pages/Solutions";
 import Playbooks from "./pages/Playbooks";
 import Blog from "./pages/Blog";
 import Resources from "./pages/Resources";
+import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/not-found";
 
@@ -21,6 +22,7 @@ function Router() {
         <Route path="/playbooks" component={Playbooks} />
         <Route path="/blog" component={Blog} />
         <Route path="/resources" component={Resources} />
+        <Route path="/team" component={Team} />
         <Route path="/contact" component={Contact} />
         <Route component={NotFound} />
       </Switch>
