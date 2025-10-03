@@ -70,7 +70,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="gradient-text">Supercharge</span> your
+              <span className="text-gray-500">Supercharge</span> your
               productivity
               <br />
               with Power Platform
@@ -93,7 +93,7 @@ export default function Home() {
                 <motion.div {...buttonHover}>
                   <Button
                     size="lg"
-                    className="px-8 py-4 text-lg font-semibold shadow-lg"
+                    className="px-8 py-4 text-lg font-semibold shadow-lg bg-black text-white hover:bg-gray-800 rounded-none"
                     data-testid="button-explore-solutions"
                   >
                     Explore Solutions
@@ -122,9 +122,9 @@ export default function Home() {
                     <Card className="text-center shadow-sm border border-border">
                       <CardContent className="p-8">
                         <div
-                          className={`w-16 h-16 ${feature.color} rounded-full flex items-center justify-center mx-auto mb-6`}
+                          className={`w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6`}
                         >
-                          <feature.icon className="text-2xl" />
+                          <feature.icon className="text-2xl text-black" />
                         </div>
                         <h3 className="text-xl font-semibold mb-4">
                           {feature.title}
@@ -132,7 +132,7 @@ export default function Home() {
                         <p className="text-muted-foreground mb-6">
                           {feature.description}
                         </p>
-                        <span className="text-primary hover:text-primary/80 font-medium inline-flex items-center">
+                        <span className="text-black hover:text-gray-700 font-medium inline-flex items-center">
                           Learn More <ArrowRight className="ml-2 h-4 w-4" />
                         </span>
                       </CardContent>
@@ -179,7 +179,7 @@ export default function Home() {
               >
                 <div className="text-center">
                   <integration.icon
-                    className={`text-4xl ${integration.color} mb-2`}
+                    className={`text-4xl text-gray-700 mb-2`}
                   />
                   <div className="text-sm font-medium">{integration.name}</div>
                 </div>
@@ -190,7 +190,7 @@ export default function Home() {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-20 bg-gradient-to-r from-primary to-accent">
+      <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -198,10 +198,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-primary-foreground mb-4">
+            <h2 className="text-3xl font-bold text-white mb-4">
               Get Started Today
             </h2>
-            <p className="text-primary-foreground/80 mb-8 text-lg">
+            <p className="text-white/80 mb-8 text-lg">
               Transform your business with Power Platform
             </p>
             <Link href="/contact">
@@ -209,7 +209,7 @@ export default function Home() {
                 <Button
                   variant="secondary"
                   size="lg"
-                  className="px-8 py-4 text-lg font-semibold shadow-lg"
+                  className="px-8 py-4 text-lg font-semibold shadow-lg bg-white text-black hover:bg-gray-100 rounded-none"
                   data-testid="button-start-journey"
                 >
                   Start Your Journey
