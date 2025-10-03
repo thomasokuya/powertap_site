@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
-import { Cog, BookOpen, Users, ArrowRight, Zap, Bot, Building, Layers } from "lucide-react";
+import { Cog, BookOpen, Users, ArrowRight, Zap, Bot, Building, Layers, GraduationCap, Target, Lightbulb, TrendingUp } from "lucide-react";
 import { fadeIn, staggerContainer, cardHover, buttonHover } from "@/lib/animations";
 
 export default function Home() {
@@ -185,6 +185,92 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Training & Events Section */}
+      <section className="py-20 bg-card">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold mb-4">Training & Events</h2>
+            <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
+              Empower your workforce to become citizen developers while bridging the gap between 
+              business objectives and technical excellence through goal-driven, transformative learning experiences.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            {[
+              {
+                icon: GraduationCap,
+                title: "Citizen Developer Program",
+                description: "Transform employees into solution builders with hands-on training in low-code development.",
+              },
+              {
+                icon: Target,
+                title: "Business-Tech Alignment",
+                description: "Bridge the gap between business requirements and technical implementation for seamless delivery.",
+              },
+              {
+                icon: Lightbulb,
+                title: "Innovation Workshops",
+                description: "Foster creativity and problem-solving skills to drive continuous process improvement.",
+              },
+              {
+                icon: TrendingUp,
+                title: "Productivity Acceleration",
+                description: "Measure and maximize ROI through strategic implementation and change management.",
+              },
+            ].map((training, index) => (
+              <motion.div key={training.title} variants={fadeIn}>
+                <Card className="text-center shadow-sm border border-border h-full hover:shadow-md transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <training.icon className="text-xl text-black" />
+                    </div>
+                    <h3 className="text-lg font-semibold mb-3">
+                      {training.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      {training.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            className="text-center mt-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <Link href="/contact">
+              <motion.div {...buttonHover}>
+                <Button
+                  size="lg"
+                  className="px-8 py-4 text-lg font-semibold shadow-lg bg-black text-white hover:bg-gray-800 rounded-none"
+                  data-testid="button-explore-training"
+                >
+                  Explore Training Options
+                </Button>
+              </motion.div>
+            </Link>
           </motion.div>
         </div>
       </section>
