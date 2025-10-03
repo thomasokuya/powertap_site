@@ -33,10 +33,10 @@ export default function Navigation() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
                 <Zap className="text-white text-sm" />
               </div>
-              <span className="text-xl font-bold gradient-text">PowerTap</span>
+              <span className="text-xl font-bold text-black">PowerTap</span>
             </motion.div>
           </Link>
 
@@ -51,8 +51,8 @@ export default function Navigation() {
                 <motion.span
                   className={`text-sm font-medium transition-colors ${
                     isActive(item.href)
-                      ? "text-primary"
-                      : "text-muted-foreground hover:text-primary"
+                      ? "text-black"
+                      : "text-muted-foreground hover:text-black"
                   }`}
                   whileHover={{ y: -2 }}
                   transition={{ duration: 0.2 }}
@@ -97,8 +97,8 @@ export default function Navigation() {
                 <div
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                     isActive(item.href)
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-primary hover:bg-muted"
+                      ? "text-black bg-gray-100"
+                      : "text-muted-foreground hover:text-black hover:bg-muted"
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

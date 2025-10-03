@@ -68,10 +68,10 @@ export default function Footer() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.1 }}
             >
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
                 <Zap className="text-white text-sm" />
               </div>
-              <span className="text-xl font-bold gradient-text">PowerTap</span>
+              <span className="text-xl font-bold text-black">PowerTap</span>
             </motion.div>
             <motion.p
               className="text-muted-foreground mb-6 max-w-md"
