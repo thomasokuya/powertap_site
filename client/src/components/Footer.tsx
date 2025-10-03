@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Zap, Linkedin, Github, Twitter } from "lucide-react";
+import { Zap, Linkedin, Github } from "lucide-react";
+import { SiX } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -43,9 +44,9 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Linkedin, href: "#", label: "LinkedIn", isLucide: true },
+    { icon: SiX, href: "#", label: "X", isLucide: false },
+    { icon: Github, href: "#", label: "GitHub", isLucide: true },
   ];
 
   const quickLinks = [
@@ -92,12 +93,12 @@ export default function Footer() {
                 <motion.a
                   key={social.label}
                   href={social.href}
-                  className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                  className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center hover:bg-black hover:text-white transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   data-testid={`link-social-${social.label.toLowerCase()}`}
                 >
-                  <social.icon className="h-5 w-5" />
+                  <social.icon className={social.isLucide ? "h-5 w-5" : "h-4 w-4"} />
                 </motion.a>
               ))}
             </motion.div>
@@ -115,7 +116,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link href={link.href}>
                     <span
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-black transition-colors"
                       data-testid={`link-footer-${link.label.toLowerCase()}`}
                     >
                       {link.label}
@@ -147,7 +148,7 @@ export default function Footer() {
               />
               <Button
                 type="submit"
-                className="w-full"
+                className="w-full bg-black text-white hover:bg-gray-800 rounded-none"
                 disabled={newsletterMutation.isPending}
                 data-testid="button-newsletter-subscribe"
               >
