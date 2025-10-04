@@ -2,12 +2,8 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
-import { Cog, BookOpen, Users, ArrowRight, GraduationCap, Target, Lightbulb, TrendingUp } from "lucide-react";
+import { Cog, BookOpen, Users, ArrowRight, Zap, Bot, Building, Layers, GraduationCap, Target, Lightbulb, TrendingUp } from "lucide-react";
 import { fadeIn, staggerContainer, cardHover, buttonHover } from "@/lib/animations";
-import powerPlatformLogo from "@assets/stock_images/microsoft_power_plat_43d5809c.jpg";
-import copilotLogo from "@assets/stock_images/microsoft_copilot_lo_0786461b.jpg";
-import dynamics365Logo from "@assets/stock_images/microsoft_dynamics_3_e2b10220.jpg";
-import microsoft365Logo from "@assets/stock_images/microsoft_365_logo_o_cf00f88e.jpg";
 
 export default function Home() {
   const features = [
@@ -36,20 +32,24 @@ export default function Home() {
 
   const integrations = [
     {
+      icon: Zap,
       name: "Power Platform",
-      logo: powerPlatformLogo,
+      color: "text-blue-600",
     },
     {
+      icon: Bot,
       name: "Copilot",
-      logo: copilotLogo,
+      color: "text-purple-600",
     },
     {
+      icon: Building,
       name: "Dynamics 365",
-      logo: dynamics365Logo,
+      color: "text-orange-600",
     },
     {
+      icon: Layers,
       name: "Microsoft 365",
-      logo: microsoft365Logo,
+      color: "text-green-600",
     },
   ];
 
@@ -174,14 +174,12 @@ export default function Home() {
                 variants={fadeIn}
                 whileHover={{
                   scale: 1.05,
-                  filter: "brightness(1.1)",
+                  filter: "grayscale(0%) opacity(1)",
                 }}
               >
                 <div className="text-center">
-                  <img
-                    src={integration.logo}
-                    alt={`${integration.name} logo`}
-                    className="w-16 h-16 object-contain mx-auto mb-2"
+                  <integration.icon
+                    className={`text-4xl text-gray-700 mb-2`}
                   />
                   <div className="text-sm font-medium">{integration.name}</div>
                 </div>
