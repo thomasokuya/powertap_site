@@ -2,8 +2,12 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
-import { Cog, BookOpen, Users, ArrowRight, Zap, Bot, Building, Layers, GraduationCap, Target, Lightbulb, TrendingUp } from "lucide-react";
+import { Cog, BookOpen, Users, ArrowRight, GraduationCap, Target, Lightbulb, TrendingUp } from "lucide-react";
 import { fadeIn, staggerContainer, cardHover, buttonHover } from "@/lib/animations";
+import powerPlatformLogo from "@assets/stock_images/microsoft_power_plat_43d5809c.jpg";
+import copilotLogo from "@assets/stock_images/microsoft_copilot_lo_0786461b.jpg";
+import dynamics365Logo from "@assets/stock_images/microsoft_dynamics_3_e2b10220.jpg";
+import microsoft365Logo from "@assets/stock_images/microsoft_365_logo_o_cf00f88e.jpg";
 
 export default function Home() {
   const features = [
@@ -33,19 +37,19 @@ export default function Home() {
   const integrations = [
     {
       name: "Power Platform",
-      logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Microsoft_Power_Platform_logo.svg/512px-Microsoft_Power_Platform_logo.svg.png",
+      logo: powerPlatformLogo,
     },
     {
       name: "Copilot",
-      logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Microsoft_365_Copilot_Icon.svg/512px-Microsoft_365_Copilot_Icon.svg.png",
+      logo: copilotLogo,
     },
     {
       name: "Dynamics 365",
-      logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_Dynamics_365_Logo_%282021%E2%80%93present%29.svg/512px-Microsoft_Dynamics_365_Logo_%282021%E2%80%93present%29.svg.png",
+      logo: dynamics365Logo,
     },
     {
       name: "Microsoft 365",
-      logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Microsoft_365_%282022%29.svg/512px-Microsoft_365_%282022%29.svg.png",
+      logo: microsoft365Logo,
     },
   ];
 
@@ -175,10 +179,9 @@ export default function Home() {
               >
                 <div className="text-center">
                   <img
-                    src={integration.logoUrl}
+                    src={integration.logo}
                     alt={`${integration.name} logo`}
                     className="w-16 h-16 object-contain mx-auto mb-2"
-                    loading="lazy"
                   />
                   <div className="text-sm font-medium">{integration.name}</div>
                 </div>
