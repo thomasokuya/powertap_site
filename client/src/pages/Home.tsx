@@ -2,8 +2,12 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
-import { Cog, BookOpen, Users, ArrowRight, Zap, Bot, Building, Layers, GraduationCap, Target, Lightbulb, TrendingUp } from "lucide-react";
+import { Cog, BookOpen, Users, ArrowRight, GraduationCap, Target, Lightbulb, TrendingUp } from "lucide-react";
 import { fadeIn, staggerContainer, cardHover, buttonHover } from "@/lib/animations";
+import powerPlatformLogo from "@assets/Power Platform_1759543098152.png";
+import copilotLogo from "@assets/Copilot_1759543098150.png";
+import dynamics365Logo from "@assets/Dynamics 365_1759543098151.png";
+import microsoft365Logo from "@assets/Microsoft 365_1759543098152.png";
 
 export default function Home() {
   const features = [
@@ -32,24 +36,20 @@ export default function Home() {
 
   const integrations = [
     {
-      icon: Zap,
+      logo: powerPlatformLogo,
       name: "Power Platform",
-      color: "text-blue-600",
     },
     {
-      icon: Bot,
+      logo: copilotLogo,
       name: "Copilot",
-      color: "text-purple-600",
     },
     {
-      icon: Building,
+      logo: dynamics365Logo,
       name: "Dynamics 365",
-      color: "text-orange-600",
     },
     {
-      icon: Layers,
+      logo: microsoft365Logo,
       name: "Microsoft 365",
-      color: "text-green-600",
     },
   ];
 
@@ -178,8 +178,10 @@ export default function Home() {
                 }}
               >
                 <div className="text-center">
-                  <integration.icon
-                    className={`text-4xl text-gray-700 mb-2`}
+                  <img
+                    src={integration.logo}
+                    alt={integration.name}
+                    className="w-16 h-16 mx-auto mb-3 object-contain"
                   />
                   <div className="text-sm font-medium">{integration.name}</div>
                 </div>
