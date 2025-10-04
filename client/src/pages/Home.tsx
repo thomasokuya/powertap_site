@@ -32,24 +32,20 @@ export default function Home() {
 
   const integrations = [
     {
-      icon: Zap,
       name: "Power Platform",
-      color: "text-blue-600",
+      logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Microsoft_Power_Platform_logo.svg/512px-Microsoft_Power_Platform_logo.svg.png",
     },
     {
-      icon: Bot,
       name: "Copilot",
-      color: "text-purple-600",
+      logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Microsoft_365_Copilot_Icon.svg/512px-Microsoft_365_Copilot_Icon.svg.png",
     },
     {
-      icon: Building,
       name: "Dynamics 365",
-      color: "text-orange-600",
+      logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_Dynamics_365_Logo_%282021%E2%80%93present%29.svg/512px-Microsoft_Dynamics_365_Logo_%282021%E2%80%93present%29.svg.png",
     },
     {
-      icon: Layers,
       name: "Microsoft 365",
-      color: "text-green-600",
+      logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Microsoft_365_%282022%29.svg/512px-Microsoft_365_%282022%29.svg.png",
     },
   ];
 
@@ -174,12 +170,15 @@ export default function Home() {
                 variants={fadeIn}
                 whileHover={{
                   scale: 1.05,
-                  filter: "grayscale(0%) opacity(1)",
+                  filter: "brightness(1.1)",
                 }}
               >
                 <div className="text-center">
-                  <integration.icon
-                    className={`text-4xl text-gray-700 mb-2`}
+                  <img
+                    src={integration.logoUrl}
+                    alt={`${integration.name} logo`}
+                    className="w-16 h-16 object-contain mx-auto mb-2"
+                    loading="lazy"
                   />
                   <div className="text-sm font-medium">{integration.name}</div>
                 </div>
