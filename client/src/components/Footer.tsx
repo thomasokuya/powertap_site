@@ -1,47 +1,9 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Zap, Linkedin, Github } from "lucide-react";
+import { Zap, Linkedin, Github, Mail } from "lucide-react";
 import { SiX } from "react-icons/si";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useState } from "react";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
-import { useToast } from "@/hooks/use-toast";
 
 export default function Footer() {
-  const [email, setEmail] = useState("");
-  const { toast } = useToast();
-  const queryClient = useQueryClient();
-
-  const newsletterMutation = useMutation({
-    mutationFn: async (email: string) => {
-      const response = await apiRequest("POST", "/api/newsletter", { email });
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "Success!",
-        description: "Thank you for subscribing to our newsletter.",
-      });
-      setEmail("");
-      queryClient.invalidateQueries({ queryKey: ["/api/newsletter"] });
-    },
-    onError: (error: Error) => {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to subscribe. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      newsletterMutation.mutate(email);
-    }
-  };
 
   const socialLinks = [
     { icon: Linkedin, href: "#", label: "LinkedIn", isLucide: true },
@@ -127,34 +89,24 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Newsletter */}
+          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            <h3 className="font-semibold mb-4">Stay Updated</h3>
+            <h3 className="font-semibold mb-4">Get in Touch</h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Get the latest Power Platform insights delivered to your inbox.
+              Have questions about Power Platform? We're here to help.
             </p>
-            <form onSubmit={handleNewsletterSubmit} className="space-y-3">
-              <Input
-                type="email"
-                placeholder="Your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                data-testid="input-newsletter-email"
-              />
-              <Button
-                type="submit"
-                className="w-full bg-black text-white hover:bg-gray-800 rounded-none"
-                disabled={newsletterMutation.isPending}
-                data-testid="button-newsletter-subscribe"
-              >
-                {newsletterMutation.isPending ? "Subscribing..." : "Subscribe"}
-              </Button>
-            </form>
+            <div className="flex items-center space-x-2 text-sm" data-testid="text-footer-email">
+              <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                <Mail className="h-4 w-4 text-primary" />
+              </div>
+              <a href="mailto:info@powertap.co" className="text-muted-foreground hover:text-black transition-colors">
+                info@powertap.co
+              </a>
+            </div>
           </motion.div>
         </div>
 
